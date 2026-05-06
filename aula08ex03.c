@@ -1,25 +1,26 @@
 #include <stdio.h>
 
-float potencia(float base, float expoente){
+float potencia(float base, int expoente){
+
     if(expoente == 0){
         return 1;
-    }else{
-        return base * potencia(base, expoente - 1);
     }
+
+    return base * potencia(base, expoente - 1);
 }
 
 int main(){
-    float base, expoente;
 
-    printf("Digite o numero da base: ");
+    float base;
+    int expoente;
+
+    printf("Digite a base: ");
     scanf("%f", &base);
 
-    printf("Digite o numero do expoente: ");
-    scanf("%f", &expoente);
+    printf("Digite o expoente: ");
+    scanf("%d", &expoente);
 
-    float resultado = potencia(base, expoente);
-
-    printf("Resultado: %.2f\n", resultado);
+    printf("Resultado: %.2f\n", potencia(base, expoente));
 
     return 0;
 }
